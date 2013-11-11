@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title><%= title %></title>
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+  </head>
+  
+  <body>
+    <h1><%= title %></h1>
+  
+    <form method='POST' enctype='multipart/form-data' action='/file-upload'>
+        <p>
+            Please specify a file, or a set of files:<br/>
+            <input type='file' name='file' />
+        </p>
+      <input type='submit' value='Send' />
+    </form>
+  </body>
+  
+</html>
