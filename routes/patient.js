@@ -4,7 +4,29 @@
  */
  
 exports.viewer = function(req, res){
-    res.render('viewer', { title: 'Viewer', name: 'Toto' });
+    
+    var libxmljs = require("libxmljs");//npm install libxmljs
+    var fs = require("fs");//pour lire un fichier
+
+    var xml = fs.readFileSync("temp/test.xml", "utf-8");
+    var xmlDoc = libxmljs.parseXmlString(xml);
+
+    // xpath queries : first node with tag 'element' and attribute 'name' as 'PatientName'
+    var p_name = xmlDoc.get("//element[@name='PatientName']").text();
+    var p_name_split = p_name.split("^");
+    var p_id = xmlDoc.get("//element[@name='PatientID']").text();
+    var p_sex = xmlDoc.get("//element[@name='PatientSex']").text();
+
+    // Only for debugging
+
+    /*console.log(JSON.stringify({
+        patient_firstname: p_name_split[0],
+        patient_lastname: p_name_split[1],
+        patient_id: p_id,
+        patient_sex: p_sex
+    }));*/
+
+    res.render('viewer', { title: 'Viewer', name: p_name, pid:p_id, sex:p_sex });
 };
 
 
@@ -23,14 +45,14 @@ console.log(req.files);
     
 
     function puts(error, stdout, stderr) { sys.puts(stdout) }
-    exec("dcm2xml "+ file.path +" temp/test.xml", puts);
+    exec("dcm2xml "+ file.path +" public/test.xml", puts);
     //exec("ls", puts);
     res.redirect('viewer');
 };
 
 
 /////////////////////////
-// SOCKET IO
+// SOCKET IO test but we're going to use WS (check e-mail)
 
 exports.send_pixel_data = function(socket){
     var array = new Uint16Array(10);
