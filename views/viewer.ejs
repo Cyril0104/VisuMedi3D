@@ -1,16 +1,17 @@
 <html>
 <head>
 <title>Visualisation Medicale</title>
+<link rel="stylesheet" type="text/css" href="stylesheets/demo.css">
+<link rel="stylesheet" type="text/css" href="stylesheets/style.css">
+<link rel="stylesheet" type="text/css" href="http://yui.yahooapis.com/3.3.0/build/cssreset/reset-min.css">
+<link rel='stylesheet' type="text/css" href='/stylesheets/tabulous.css' />
+<link href='http://fonts.googleapis.com/css?family=Lato:400,700' rel='stylesheet' type='text/css'>
+
 <script type="text/javascript" src="/javascripts/xtk.js"></script>
 <script type="text/javascript" src="/javascripts/rendu2D.js"></script>
 <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
 <script type="text/javascript" src="/javascripts/tabulous.js"></script>
 <script type="text/javascript" src="javascripts/js.js"></script>
-
-<link rel="stylesheet" type="text/css" href="stylesheets/demo.css">
-<link rel="stylesheet" type="text/css" href="http://yui.yahooapis.com/3.3.0/build/cssreset/reset-min.css">
-<link href='http://fonts.googleapis.com/css?family=Lato:400,700' rel='stylesheet' type='text/css'>
-<link rel='stylesheet' href='/stylesheets/tabulous.css' />
 
 </head>
 
@@ -28,22 +29,19 @@
       </ul>
 
       <div id="tabs_container">
-            <div id="tabs-1">
-                <span> Patient Name: <%= name %> </span>  <br/>
-                <span> Patient ID: <%= pid %> </span> <br/>
-                <span> Patient Sex : <%= sex %> </span>
-            </div>
+        <div id="tabs-1">
+            <span> Patient Name: <%= name %> </span>  <br/>
+            <span> Patient ID: <%= pid %> </span> <br/>
+            <span> Patient Sex : <%= sex %> </span> <br/>
+            <span> Image : <%= columns %> x <%= rows %> </span><br/>
+            <span> PixelSpacing : <%= pixelspacing %> </span>
+            <span> SliceLocation : <%= slicelocation %> </span>
+        </div>
       
         <div id="tabs-2">
           <form>
-            <input type="checkbox" name="option1" value="Milk"> Milk<br>
-            <input type="checkbox" name="option1" value="Milk"> Milk<br>
-            <input type="checkbox" name="option1" value="Milk"> Milk<br>
-            <input type="checkbox" name="option1" value="Milk"> Milk<br>
-            <input type="checkbox" name="option1" value="Milk"> Milk<br>
-            <input type="checkbox" name="option1" value="Milk"> Milk<br>
-            <input type="checkbox" name="option1" value="Milk"> Milk<br>
-            <input type="checkbox" name="option1" value="Milk"> Milk<br>
+            <input type="checkbox" name="option1" value="Bones"> Bones<br>
+            <input type="checkbox" name="option1" value="Flesh"> Flesh<br>
           </form>
         </div>
       </div><!--End tabs container-->

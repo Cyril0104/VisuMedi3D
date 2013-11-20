@@ -1,0 +1,240 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<file-format>
+<meta-header xfer="1.2.840.10008.1.2.1" name="Little Endian Explicit">
+<element tag="0002,0000" vr="UL" vm="1" len="4" name="FileMetaInformationGroupLength">184</element>
+<element tag="0002,0001" vr="OB" vm="1" len="2" name="FileMetaInformationVersion" binary="hidden"></element>
+<element tag="0002,0002" vr="UI" vm="1" len="26" name="MediaStorageSOPClassUID">1.2.840.10008.5.1.4.1.1.2</element>
+<element tag="0002,0003" vr="UI" vm="1" len="42" name="MediaStorageSOPInstanceUID">1.2.840.113704.1.111.3372.1237906410.3594</element>
+<element tag="0002,0010" vr="UI" vm="1" len="18" name="TransferSyntaxUID">1.2.840.10008.1.2</element>
+<element tag="0002,0012" vr="UI" vm="1" len="28" name="ImplementationClassUID">1.2.276.0.7230010.3.0.3.5.4</element>
+<element tag="0002,0013" vr="SH" vm="1" len="16" name="ImplementationVersionName">OFFIS_DCMTK_354</element>
+</meta-header>
+<data-set xfer="1.2.840.10008.1.2" name="Little Endian Implicit">
+<element tag="0008,0005" vr="CS" vm="1" len="10" name="SpecificCharacterSet">ISO_IR 100</element>
+<element tag="0008,0008" vr="CS" vm="4" len="28" name="ImageType">ORIGINAL\PRIMARY\AXIAL\HELIX</element>
+<element tag="0008,0012" vr="DA" vm="1" len="8" name="InstanceCreationDate">20090324</element>
+<element tag="0008,0013" vr="TM" vm="1" len="6" name="InstanceCreationTime">155330</element>
+<element tag="0008,0016" vr="UI" vm="1" len="26" name="SOPClassUID">1.2.840.10008.5.1.4.1.1.2</element>
+<element tag="0008,0018" vr="UI" vm="1" len="42" name="SOPInstanceUID">1.2.840.113704.1.111.3372.1237906410.3594</element>
+<element tag="0008,0020" vr="DA" vm="1" len="8" name="StudyDate">20090324</element>
+<element tag="0008,0022" vr="DA" vm="1" len="8" name="AcquisitionDate">20090324</element>
+<element tag="0008,0023" vr="DA" vm="1" len="8" name="ContentDate">20090324</element>
+<element tag="0008,0030" vr="TM" vm="1" len="6" name="StudyTime">153251</element>
+<element tag="0008,0032" vr="TM" vm="1" len="6" name="AcquisitionTime">155227</element>
+<element tag="0008,0033" vr="TM" vm="1" len="10" name="ContentTime">155232.862</element>
+<element tag="0008,0050" vr="SH" vm="1" len="8" name="AccessionNumber">4616150</element>
+<element tag="0008,0060" vr="CS" vm="1" len="2" name="Modality">CT</element>
+<element tag="0008,0070" vr="LO" vm="1" len="8" name="Manufacturer">Philips</element>
+<element tag="0008,0080" vr="LO" vm="1" len="20" name="InstitutionName">CLINIQUES SAINT LUC</element>
+<element tag="0008,0081" vr="ST" vm="1" len="16" name="InstitutionAddress">B1200 Bruxelles</element>
+<element tag="0008,0090" vr="PN" vm="1" len="36" name="ReferringPhysicianName">GREGOIRE^VINCENT^18435740960^^PROF.</element>
+<element tag="0008,1010" vr="SH" vm="1" len="10" name="StationName">HOST-52024</element>
+<element tag="0008,1030" vr="LO" vm="1" len="12" name="StudyDescription">CT- PET COU</element>
+<sequence tag="0008,1032" vr="SQ" card="1" len="58" name="ProcedureCodeSequence">
+<item card="3" len="50">
+<element tag="0008,0100" vr="SH" vm="1" len="6" name="CodeValue">CTCOU</element>
+<element tag="0008,0102" vr="SH" vm="1" len="8" name="CodingSchemeDesignator">Default</element>
+<element tag="0008,0104" vr="LO" vm="1" len="12" name="CodeMeaning">CT- PET COU</element>
+</item>
+</sequence>
+<element tag="0008,103e" vr="LO" vm="0" len="0" name="SeriesDescription"></element>
+<element tag="0008,1040" vr="LO" vm="1" len="18" name="InstitutionalDepartmentName">Medecine Nucleaire</element>
+<element tag="0008,1070" vr="PN" vm="0" len="0" name="OperatorsName"></element>
+<element tag="0008,1090" vr="LO" vm="1" len="10" name="ManufacturerModelName">Gemini TF</element>
+<sequence tag="0008,1110" vr="SQ" card="1" len="108" name="ReferencedStudySequence">
+<item card="2" len="100">
+<element tag="0008,1150" vr="UI" vm="1" len="24" name="ReferencedSOPClassUID">1.2.840.10008.3.1.2.3.1</element>
+<element tag="0008,1155" vr="UI" vm="1" len="60" name="ReferencedSOPInstanceUID">1.2.250.1.38.2.1.12.5504139343233.20090324145009.1426768156</element>
+</item>
+</sequence>
+<sequence tag="0008,1111" vr="SQ" card="1" len="88" name="ReferencedPerformedProcedureStepSequence">
+<item card="2" len="80">
+<element tag="0008,1150" vr="UI" vm="1" len="24" name="ReferencedSOPClassUID">1.2.840.10008.3.1.2.3.3</element>
+<element tag="0008,1155" vr="UI" vm="1" len="40" name="ReferencedSOPInstanceUID">1.2.840.113704.1.111.7160.1237905155.36</element>
+</item>
+</sequence>
+<sequence tag="0008,1120" vr="SQ" card="1" len="24" name="ReferencedPatientSequence">
+<item card="2" len="16">
+<element tag="0008,1150" vr="UI" vm="0" len="0" name="ReferencedSOPClassUID"></element>
+<element tag="0008,1155" vr="UI" vm="0" len="0" name="ReferencedSOPInstanceUID"></element>
+</item>
+</sequence>
+<sequence tag="0008,1140" vr="SQ" card="1" len="92" name="ReferencedImageSequence">
+<item card="2" len="84">
+<element tag="0008,1150" vr="UI" vm="1" len="26" name="ReferencedSOPClassUID">1.2.840.10008.5.1.4.1.1.2</element>
+<element tag="0008,1155" vr="UI" vm="1" len="42" name="ReferencedSOPInstanceUID">1.2.840.113704.1.111.3372.1237906188.3440</element>
+</item>
+</sequence>
+<element tag="0010,0010" vr="PN" vm="1" len="8" name="PatientName">Workshop</element>
+<element tag="0010,0020" vr="LO" vm="1" len="8" name="PatientID">R32497K</element>
+<element tag="0010,0030" vr="DA" vm="1" len="8" name="PatientBirthDate">19380125</element>
+<element tag="0010,0040" vr="CS" vm="1" len="2" name="PatientSex">F</element>
+<element tag="0010,1010" vr="AS" vm="1" len="4" name="PatientAge">071Y</element>
+<element tag="0010,1020" vr="DS" vm="1" len="4" name="PatientSize">1.61</element>
+<element tag="0010,1030" vr="DS" vm="1" len="2" name="PatientWeight">60</element>
+<element tag="0010,2000" vr="LO" vm="0" len="0" name="MedicalAlerts"></element>
+<element tag="0010,2110" vr="LO" vm="0" len="0" name="Allergies"></element>
+<element tag="0010,21c0" vr="US" vm="0" len="0" name="PregnancyStatus"></element>
+<element tag="0018,0022" vr="CS" vm="1" len="6" name="ScanOptions">HELIX</element>
+<element tag="0018,0050" vr="DS" vm="1" len="2" name="SliceThickness">2</element>
+<element tag="0018,0060" vr="DS" vm="1" len="4" name="KVP">120</element>
+<element tag="0018,0088" vr="DS" vm="1" len="2" name="SpacingBetweenSlices">-2</element>
+<element tag="0018,0090" vr="DS" vm="1" len="4" name="DataCollectionDiameter">500</element>
+<element tag="0018,1020" vr="LO" vm="1" len="6" name="SoftwareVersions">2.0.0</element>
+<element tag="0018,1030" vr="LO" vm="1" len="20" name="ProtocolName">RT-ORL/RADIOTHERAPI</element>
+<element tag="0018,1100" vr="DS" vm="1" len="4" name="ReconstructionDiameter">500</element>
+<element tag="0018,1120" vr="DS" vm="1" len="2" name="GantryDetectorTilt">0</element>
+<element tag="0018,1130" vr="DS" vm="1" len="4" name="TableHeight">185</element>
+<element tag="0018,1140" vr="CS" vm="1" len="2" name="RotationDirection">CW</element>
+<element tag="0018,1151" vr="IS" vm="1" len="4" name="XRayTubeCurrent">431</element>
+<element tag="0018,1152" vr="IS" vm="1" len="4" name="Exposure">265</element>
+<element tag="0018,1160" vr="SH" vm="1" len="2" name="FilterType">B</element>
+<element tag="0018,1210" vr="SH" vm="1" len="2" name="ConvolutionKernel">B</element>
+<element tag="0018,5100" vr="CS" vm="1" len="4" name="PatientPosition">HFS</element>
+<sequence tag="0018,9321" vr="SQ" card="1" len="88" name="CTExposureSequence">
+<item card="5" len="80">
+<element tag="0018,9324" vr="FD" vm="1" len="8" name="EstimatedDoseSaving">0</element>
+<element tag="0018,9328" vr="FD" vm="1" len="8" name="ExposureTimeInms">0.61484918793503489</element>
+<element tag="0018,9330" vr="FD" vm="1" len="8" name="XRayTubeCurrentInmA">431</element>
+<element tag="0018,9332" vr="FD" vm="1" len="8" name="ExposureInmAs">265</element>
+<element tag="0018,9345" vr="FD" vm="1" len="8" name="CTDIvol">40.299999999999997</element>
+</item>
+</sequence>
+<element tag="0018,9323" vr="CS" vm="0" len="0" name="ExposureModulationType"></element>
+<element tag="0018,9345" vr="FD" vm="1" len="8" name="CTDIvol">40.299999999999997</element>
+<element tag="0020,000d" vr="UI" vm="1" len="60" name="StudyInstanceUID">1.2.250.1.38.2.1.12.5504139343233.20090324145009.1426768156</element>
+<element tag="0020,000e" vr="UI" vm="1" len="38" name="SeriesInstanceUID">1.2.840.113704.1.111.4916.1237906224.8</element>
+<element tag="0020,0010" vr="SH" vm="1" len="4" name="StudyID">CT1</element>
+<element tag="0020,0011" vr="IS" vm="1" len="2" name="SeriesNumber">2</element>
+<element tag="0020,0012" vr="IS" vm="0" len="0" name="AcquisitionNumber"></element>
+<element tag="0020,0013" vr="IS" vm="1" len="2" name="InstanceNumber">53</element>
+<element tag="0020,0032" vr="DS" vm="3" len="16" name="ImagePositionPatient">-250\-215\-39.5</element>
+<element tag="0020,0037" vr="DS" vm="6" len="12" name="ImageOrientationPatient">1\0\0\0\1\0</element>
+<element tag="0020,0052" vr="UI" vm="1" len="38" name="FrameOfReferenceUID">1.2.840.113704.1.111.4916.1237906162.5</element>
+<element tag="0020,0060" vr="CS" vm="0" len="0" name="Laterality"></element>
+<element tag="0020,1040" vr="LO" vm="0" len="0" name="PositionReferenceIndicator"></element>
+<element tag="0020,1041" vr="DS" vm="1" len="6" name="SliceLocation">-39.5</element>
+<element tag="0020,1208" vr="IS" vm="1" len="4" name="NumberOfStudyRelatedInstances">114</element>
+<element tag="0020,4000" vr="LT" vm="0" len="0" name="ImageComments"></element>
+<element tag="0028,0002" vr="US" vm="1" len="2" name="SamplesPerPixel">1</element>
+<element tag="0028,0004" vr="CS" vm="1" len="12" name="PhotometricInterpretation">MONOCHROME2</element>
+<element tag="0028,0010" vr="US" vm="1" len="2" name="Rows">512</element>
+<element tag="0028,0011" vr="US" vm="1" len="2" name="Columns">512</element>
+<element tag="0028,0030" vr="DS" vm="2" len="20" name="PixelSpacing">0.9765625\0.9765625</element>
+<element tag="0028,0100" vr="US" vm="1" len="2" name="BitsAllocated">16</element>
+<element tag="0028,0101" vr="US" vm="1" len="2" name="BitsStored">12</element>
+<element tag="0028,0102" vr="US" vm="1" len="2" name="HighBit">11</element>
+<element tag="0028,0103" vr="US" vm="1" len="2" name="PixelRepresentation">0</element>
+<element tag="0028,1050" vr="DS" vm="2" len="8" name="WindowCenter">449\449</element>
+<element tag="0028,1051" vr="DS" vm="2" len="10" name="WindowWidth">3064\3064</element>
+<element tag="0028,1052" vr="DS" vm="1" len="6" name="RescaleIntercept">-1024</element>
+<element tag="0028,1053" vr="DS" vm="1" len="2" name="RescaleSlope">1</element>
+<element tag="0032,1032" vr="PN" vm="0" len="0" name="RequestingPhysician"></element>
+<element tag="0032,1033" vr="LO" vm="1" len="6" name="RequestingService">C/ORL</element>
+<element tag="0032,1060" vr="LO" vm="1" len="12" name="RequestedProcedureDescription">CT- PET COU</element>
+<element tag="0038,0010" vr="LO" vm="1" len="10" name="AdmissionID">R32497KAMB</element>
+<element tag="0038,0050" vr="LO" vm="0" len="0" name="SpecialNeeds"></element>
+<element tag="0038,0500" vr="LO" vm="1" len="12" name="PatientState">HOSPITALISE</element>
+<element tag="0040,0253" vr="SH" vm="1" len="8" name="PerformedProcedureStepID">1126716</element>
+<element tag="0040,0254" vr="LO" vm="1" len="12" name="PerformedProcedureStepDescription">CT- PET COU</element>
+<sequence tag="0040,0260" vr="SQ" card="1" len="58" name="PerformedProtocolCodeSequence">
+<item card="3" len="50">
+<element tag="0008,0100" vr="SH" vm="1" len="6" name="CodeValue">CTCOU</element>
+<element tag="0008,0102" vr="SH" vm="1" len="8" name="CodingSchemeDesignator">Default</element>
+<element tag="0008,0104" vr="LO" vm="1" len="12" name="CodeMeaning">CT- PET COU</element>
+</item>
+</sequence>
+<sequence tag="0040,0275" vr="SQ" card="1" len="128" name="RequestAttributesSequence">
+<item card="4" len="120">
+<element tag="0040,0007" vr="LO" vm="1" len="12" name="ScheduledProcedureStepDescription">CT- PET COU</element>
+<sequence tag="0040,0008" vr="SQ" card="1" len="58" name="ScheduledProtocolCodeSequence">
+<item card="3" len="50">
+<element tag="0008,0100" vr="SH" vm="1" len="6" name="CodeValue">CTCOU</element>
+<element tag="0008,0102" vr="SH" vm="1" len="8" name="CodingSchemeDesignator">Default</element>
+<element tag="0008,0104" vr="LO" vm="1" len="12" name="CodeMeaning">CT- PET COU</element>
+</item>
+</sequence>
+<element tag="0040,0009" vr="SH" vm="1" len="10" name="ScheduledProcedureStepID">1175490_1</element>
+<element tag="0040,1001" vr="SH" vm="1" len="8" name="RequestedProcedureID">1175490</element>
+</item>
+</sequence>
+<element tag="0040,3001" vr="LO" vm="0" len="0" name="ConfidentialityConstraintOnPatientDataDescription"></element>
+<element tag="00e1,0010" vr="LO" vm="1" len="8" name="PrivateCreator">ELSCINT1</element>
+<element tag="00e1,1001" vr="US" vm="1" len="2" name="DataDictionaryVersion">1</element>
+<element tag="00e1,1022" vr="DS" vm="2" len="4" name="Unknown">0\0</element>
+<element tag="00e1,1023" vr="DS" vm="2" len="4" name="Unknown">1\1</element>
+<element tag="00e1,103f" vr="??" vm="1" len="6" name="Unknown Tag &amp; Data" binary="hidden"></element>
+<element tag="00e1,1040" vr="SH" vm="0" len="0" name="OffsetFromCTMRImages"></element>
+<element tag="00e1,1042" vr="??" vm="1" len="0" name="Unknown Tag &amp; Data" binary="hidden"></element>
+<element tag="00e1,1050" vr="??" vm="1" len="6" name="Unknown Tag &amp; Data" binary="hidden"></element>
+<element tag="00e1,1061" vr="??" vm="1" len="32" name="Unknown Tag &amp; Data" binary="hidden"></element>
+<element tag="00e1,1063" vr="??" vm="1" len="6" name="Unknown Tag &amp; Data" binary="hidden"></element>
+<element tag="01f1,0010" vr="LO" vm="1" len="8" name="PrivateCreator">ELSCINT1</element>
+<element tag="01f1,1001" vr="??" vm="1" len="6" name="Unknown Tag &amp; Data" binary="hidden"></element>
+<element tag="01f1,1002" vr="??" vm="1" len="8" name="Unknown Tag &amp; Data" binary="hidden"></element>
+<element tag="01f1,1003" vr="??" vm="1" len="6" name="Unknown Tag &amp; Data" binary="hidden"></element>
+<element tag="01f1,1004" vr="??" vm="1" len="6" name="Unknown Tag &amp; Data" binary="hidden"></element>
+<element tag="01f1,1005" vr="??" vm="1" len="4" name="Unknown Tag &amp; Data" binary="hidden"></element>
+<element tag="01f1,1007" vr="??" vm="1" len="4" name="Unknown Tag &amp; Data" binary="hidden"></element>
+<element tag="01f1,1008" vr="??" vm="1" len="4" name="Unknown Tag &amp; Data" binary="hidden"></element>
+<element tag="01f1,100a" vr="??" vm="1" len="2" name="Unknown Tag &amp; Data" binary="hidden"></element>
+<element tag="01f1,100c" vr="??" vm="1" len="14" name="Unknown Tag &amp; Data" binary="hidden"></element>
+<element tag="01f1,100d" vr="??" vm="1" len="2" name="Unknown Tag &amp; Data" binary="hidden"></element>
+<element tag="01f1,100e" vr="??" vm="1" len="4" name="Unknown Tag &amp; Data" binary="hidden"></element>
+<element tag="01f1,1026" vr="??" vm="1" len="6" name="Unknown Tag &amp; Data" binary="hidden"></element>
+<element tag="01f1,1027" vr="??" vm="1" len="4" name="Unknown Tag &amp; Data" binary="hidden"></element>
+<element tag="01f1,1032" vr="??" vm="1" len="14" name="Unknown Tag &amp; Data" binary="hidden"></element>
+<element tag="01f1,1042" vr="??" vm="1" len="2" name="Unknown Tag &amp; Data" binary="hidden"></element>
+<element tag="01f1,1044" vr="??" vm="1" len="644" name="Unknown Tag &amp; Data" binary="hidden"></element>
+<element tag="01f1,1046" vr="??" vm="1" len="4" name="Unknown Tag &amp; Data" binary="hidden"></element>
+<element tag="01f1,1047" vr="??" vm="1" len="2" name="Unknown Tag &amp; Data" binary="hidden"></element>
+<element tag="01f1,1049" vr="??" vm="1" len="4" name="Unknown Tag &amp; Data" binary="hidden"></element>
+<element tag="01f1,104a" vr="??" vm="1" len="4" name="Unknown Tag &amp; Data" binary="hidden"></element>
+<element tag="01f1,104b" vr="??" vm="1" len="8" name="Unknown Tag &amp; Data" binary="hidden"></element>
+<element tag="01f1,104c" vr="??" vm="1" len="2" name="Unknown Tag &amp; Data" binary="hidden"></element>
+<element tag="01f1,104d" vr="??" vm="1" len="2" name="Unknown Tag &amp; Data" binary="hidden"></element>
+<element tag="01f1,104e" vr="??" vm="1" len="4" name="Unknown Tag &amp; Data" binary="hidden"></element>
+<element tag="01f7,0010" vr="LO" vm="1" len="8" name="PrivateCreator">ELSCINT1</element>
+<element tag="01f7,1010" vr="??" vm="1" len="2" name="Unknown Tag &amp; Data" binary="hidden"></element>
+<element tag="01f7,1011" vr="??" vm="1" len="488" name="Unknown Tag &amp; Data" binary="hidden"></element>
+<element tag="01f7,1013" vr="??" vm="1" len="136" name="Unknown Tag &amp; Data" binary="hidden"></element>
+<element tag="01f7,1014" vr="??" vm="1" len="108" name="Unknown Tag &amp; Data" binary="hidden"></element>
+<element tag="01f7,1015" vr="??" vm="1" len="188" name="Unknown Tag &amp; Data" binary="hidden"></element>
+<element tag="01f7,1016" vr="??" vm="1" len="40" name="Unknown Tag &amp; Data" binary="hidden"></element>
+<element tag="01f7,1017" vr="??" vm="1" len="8" name="Unknown Tag &amp; Data" binary="hidden"></element>
+<element tag="01f7,1018" vr="??" vm="1" len="228" name="Unknown Tag &amp; Data" binary="hidden"></element>
+<element tag="01f7,1019" vr="??" vm="1" len="2160" name="Unknown Tag &amp; Data" binary="hidden"></element>
+<element tag="01f7,101a" vr="??" vm="1" len="28" name="Unknown Tag &amp; Data" binary="hidden"></element>
+<element tag="01f7,101b" vr="??" vm="1" len="1272" name="Unknown Tag &amp; Data" binary="hidden"></element>
+<element tag="01f7,101c" vr="??" vm="1" len="116" name="Unknown Tag &amp; Data" binary="hidden"></element>
+<element tag="01f7,101e" vr="??" vm="1" len="364" name="Unknown Tag &amp; Data" binary="hidden"></element>
+<element tag="01f7,101f" vr="??" vm="1" len="148" name="Unknown Tag &amp; Data" binary="hidden"></element>
+<element tag="01f7,1022" vr="??" vm="1" len="60" name="Unknown Tag &amp; Data" binary="hidden"></element>
+<element tag="01f7,1023" vr="??" vm="1" len="4" name="Unknown Tag &amp; Data" binary="hidden"></element>
+<element tag="01f7,1025" vr="??" vm="1" len="12" name="Unknown Tag &amp; Data" binary="hidden"></element>
+<element tag="01f7,1027" vr="??" vm="1" len="36" name="Unknown Tag &amp; Data" binary="hidden"></element>
+<element tag="01f7,1029" vr="??" vm="1" len="440" name="Unknown Tag &amp; Data" binary="hidden"></element>
+<element tag="01f7,102b" vr="??" vm="1" len="36" name="Unknown Tag &amp; Data" binary="hidden"></element>
+<element tag="01f7,102c" vr="??" vm="1" len="656" name="Unknown Tag &amp; Data" binary="hidden"></element>
+<element tag="01f7,102d" vr="??" vm="1" len="8" name="Unknown Tag &amp; Data" binary="hidden"></element>
+<element tag="01f7,1030" vr="??" vm="1" len="16" name="Unknown Tag &amp; Data" binary="hidden"></element>
+<element tag="01f7,1031" vr="??" vm="1" len="124" name="Unknown Tag &amp; Data" binary="hidden"></element>
+<element tag="01f7,1070" vr="??" vm="1" len="584" name="Unknown Tag &amp; Data" binary="hidden"></element>
+<element tag="01f7,1074" vr="??" vm="1" len="288" name="Unknown Tag &amp; Data" binary="hidden"></element>
+<element tag="01f7,1075" vr="??" vm="1" len="136" name="Unknown Tag &amp; Data" binary="hidden"></element>
+<element tag="07a1,0010" vr="LO" vm="1" len="8" name="PrivateCreator">ELSCINT1</element>
+<element tag="07a1,1010" vr="??" vm="1" len="4" name="Unknown Tag &amp; Data" binary="hidden"></element>
+<element tag="07a1,102a" vr="??" vm="1" len="6" name="Unknown Tag &amp; Data" binary="hidden"></element>
+<element tag="07a1,1050" vr="??" vm="1" len="2" name="Unknown Tag &amp; Data" binary="hidden"></element>
+<element tag="07a1,1085" vr="??" vm="1" len="4" name="Unknown Tag &amp; Data" binary="hidden"></element>
+<element tag="07a3,0010" vr="LO" vm="1" len="8" name="PrivateCreator">ELSCINT1</element>
+<element tag="07a3,1001" vr="??" vm="1" len="4" name="Unknown Tag &amp; Data" binary="hidden"></element>
+<element tag="07a3,1003" vr="??" vm="1" len="2" name="Unknown Tag &amp; Data" binary="hidden"></element>
+<element tag="07a3,1034" vr="??" vm="1" len="6" name="Unknown Tag &amp; Data" binary="hidden"></element>
+<element tag="07a3,1055" vr="??" vm="1" len="2" name="Unknown Tag &amp; Data" binary="hidden"></element>
+<element tag="7fdf,0010" vr="LO" vm="1" len="8" name="PrivateCreator">ELSCINT1</element>
+<element tag="7fdf,10f0" vr="??" vm="1" len="0" name="Unknown Tag &amp; Data" binary="hidden"></element>
+<element tag="7fdf,10ff" vr="??" vm="1" len="0" name="Unknown Tag &amp; Data" binary="hidden"></element>
+<element tag="7fe0,0010" vr="OW" vm="1" len="524288" name="PixelData" loaded="no" binary="hidden"></element>
+</data-set>
+</file-format>
