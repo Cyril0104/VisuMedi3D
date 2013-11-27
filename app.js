@@ -22,7 +22,7 @@ app.set('view engine', 'ejs');
 app.use(express.logger('dev'));
 app.use(express.static(path.join(__dirname, 'public')));
 
-app.use(express.bodyParser({ keepExtensions: true, uploadDir: path.join(__dirname, 'temp') }));
+app.use(express.bodyParser({ keepExtensions: true, uploadDir: path.join(__dirname, 'public/temp') }));
 app.use(express.cookieParser('your secret here'));
 app.use(express.favicon());
 app.use(express.json());
