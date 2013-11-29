@@ -10,6 +10,7 @@ window.onload = function() {
   // pour l'instant je n'y arrive qu'avec la 3D
 
   r1.container = 'r1'; // on indique qu'on veut mettre le premier rendu dans la div r1
+  r1.orientation = 'X';
   r1.init(); // initialisation
  
 //----------------------------------------------------------
@@ -68,6 +69,7 @@ window.onload = function() {
   cube.lengthX = cube.lengthY = cube.lengthZ = 40; //Dimenssions du cube
 
   cube.center = [0, 0, 0]; //centre du cube
+  cube.texture.file = 'http://x.babymri.org/?xtk.png';
 
   // [1,1,1] (== white) is also the default so this can be skipped aswell
   cube.color = [0, 1, 1];

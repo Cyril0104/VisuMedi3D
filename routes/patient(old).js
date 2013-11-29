@@ -68,27 +68,42 @@ exports.upload = function(req, res){
         exec("dcm2xml "+ file.path +" public/temp/test.xml", puts);
 
         // RAW file in "try" folder to using binary data
-        exec("dcmdump "+ file.path +" +W public/temp",puts);
+        exec("dcmdump " +file.path+" +W public/temp",puts);
         res.redirect('viewer');
         }
 
 
     else if (str[(str.length)-1]=='zip'){
-        exec("unzip " +file.path+ " -d public/temp", function (error, stdout, stderr) {
-            
-            files = fs.readdirSync("public/temp/CT");
-            //console.log(files);
+        exec("unzip " +file.path+ " -d public/temp");
+        //exec("unzip -l "+file.path+" > public/temp/list.txt");
 
-            function puts(error, stdout, stderr) { sys.puts(stdout)}
+        var callbackzip=function (error, response, body) {
+            fs.readFile("public/temp/list.txt",'utf-8', function (err, contenu) {
+                if (err) throw err;
+        
 
-            for (var i=2; i<files.length; ++i) {
-                exec("dcm2xml public/temp/CT/"+ files[i] +" public/temp/tempxml/"+(i-2)+".xml",puts);
-                exec("dcmdump public/temp/CT/"+ files[i] +" +W public/temp/tempraw",puts);
-            }
+                var tab = contenu.split(".dcm\n");
 
-            res.redirect('viewer');
-        });
-    }
+                function executiondcm(tab){
+                    console.log("a"+tab[0]+"b");
+                    function puts(error, stdout, stderr) { sys.puts(stdout)}
+                    exec("dcm2xml "+ tab[0] +".dcm public/temp/test.xml",puts);
+                    exec("dcmdump "+ tab[0] +".dcm +W public/temp",puts);
+                    res.redirect('viewer');
+                    };
+
+                executiondcm (tab);
+                });
+        };
+
+        //fonction non robuste a debugger
+        exec("find public/temp/CT -name *.dcm | sort -d > public/temp/list.txt",callbackzip);
+        //exec("head -n 1 public/temp/list.txt");
+        
+
+        //exec("dcm2xml "+ char +" public/temp/test.xml", puts);
+        //exec("dcmdump " +char+" +W public/temp",puts);
+        }
 
 };
 

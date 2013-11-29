@@ -4,7 +4,7 @@
 <element tag="0002,0000" vr="UL" vm="1" len="4" name="FileMetaInformationGroupLength">184</element>
 <element tag="0002,0001" vr="OB" vm="1" len="2" name="FileMetaInformationVersion" binary="hidden"></element>
 <element tag="0002,0002" vr="UI" vm="1" len="26" name="MediaStorageSOPClassUID">1.2.840.10008.5.1.4.1.1.2</element>
-<element tag="0002,0003" vr="UI" vm="1" len="42" name="MediaStorageSOPInstanceUID">1.2.840.113704.1.111.3372.1237906404.3557</element>
+<element tag="0002,0003" vr="UI" vm="1" len="42" name="MediaStorageSOPInstanceUID">1.2.840.113704.1.111.3372.1237906401.3542</element>
 <element tag="0002,0010" vr="UI" vm="1" len="18" name="TransferSyntaxUID">1.2.840.10008.1.2</element>
 <element tag="0002,0012" vr="UI" vm="1" len="28" name="ImplementationClassUID">1.2.276.0.7230010.3.0.3.5.4</element>
 <element tag="0002,0013" vr="SH" vm="1" len="16" name="ImplementationVersionName">OFFIS_DCMTK_354</element>
@@ -13,15 +13,15 @@
 <element tag="0008,0005" vr="CS" vm="1" len="10" name="SpecificCharacterSet">ISO_IR 100</element>
 <element tag="0008,0008" vr="CS" vm="4" len="28" name="ImageType">ORIGINAL\PRIMARY\AXIAL\HELIX</element>
 <element tag="0008,0012" vr="DA" vm="1" len="8" name="InstanceCreationDate">20090324</element>
-<element tag="0008,0013" vr="TM" vm="1" len="6" name="InstanceCreationTime">155324</element>
+<element tag="0008,0013" vr="TM" vm="1" len="6" name="InstanceCreationTime">155321</element>
 <element tag="0008,0016" vr="UI" vm="1" len="26" name="SOPClassUID">1.2.840.10008.5.1.4.1.1.2</element>
-<element tag="0008,0018" vr="UI" vm="1" len="42" name="SOPInstanceUID">1.2.840.113704.1.111.3372.1237906404.3557</element>
+<element tag="0008,0018" vr="UI" vm="1" len="42" name="SOPInstanceUID">1.2.840.113704.1.111.3372.1237906401.3542</element>
 <element tag="0008,0020" vr="DA" vm="1" len="8" name="StudyDate">20090324</element>
 <element tag="0008,0022" vr="DA" vm="1" len="8" name="AcquisitionDate">20090324</element>
 <element tag="0008,0023" vr="DA" vm="1" len="8" name="ContentDate">20090324</element>
 <element tag="0008,0030" vr="TM" vm="1" len="6" name="StudyTime">153251</element>
 <element tag="0008,0032" vr="TM" vm="1" len="6" name="AcquisitionTime">155227</element>
-<element tag="0008,0033" vr="TM" vm="1" len="10" name="ContentTime">155229.069</element>
+<element tag="0008,0033" vr="TM" vm="1" len="10" name="ContentTime">155227.532</element>
 <element tag="0008,0050" vr="SH" vm="1" len="8" name="AccessionNumber">4616150</element>
 <element tag="0008,0060" vr="CS" vm="1" len="2" name="Modality">CT</element>
 <element tag="0008,0070" vr="LO" vm="1" len="8" name="Manufacturer">Philips</element>
@@ -107,13 +107,13 @@
 <element tag="0020,0010" vr="SH" vm="1" len="4" name="StudyID">CT1</element>
 <element tag="0020,0011" vr="IS" vm="1" len="2" name="SeriesNumber">2</element>
 <element tag="0020,0012" vr="IS" vm="0" len="0" name="AcquisitionNumber"></element>
-<element tag="0020,0013" vr="IS" vm="1" len="2" name="InstanceNumber">16</element>
-<element tag="0020,0032" vr="DS" vm="3" len="14" name="ImagePositionPatient">-250\-215\34.5</element>
+<element tag="0020,0013" vr="IS" vm="1" len="2" name="InstanceNumber">1</element>
+<element tag="0020,0032" vr="DS" vm="3" len="14" name="ImagePositionPatient">-250\-215\64.5</element>
 <element tag="0020,0037" vr="DS" vm="6" len="12" name="ImageOrientationPatient">1\0\0\0\1\0</element>
 <element tag="0020,0052" vr="UI" vm="1" len="38" name="FrameOfReferenceUID">1.2.840.113704.1.111.4916.1237906162.5</element>
 <element tag="0020,0060" vr="CS" vm="0" len="0" name="Laterality"></element>
 <element tag="0020,1040" vr="LO" vm="0" len="0" name="PositionReferenceIndicator"></element>
-<element tag="0020,1041" vr="DS" vm="1" len="4" name="SliceLocation">34.5</element>
+<element tag="0020,1041" vr="DS" vm="1" len="4" name="SliceLocation">64.5</element>
 <element tag="0020,1208" vr="IS" vm="1" len="4" name="NumberOfStudyRelatedInstances">114</element>
 <element tag="0020,4000" vr="LT" vm="0" len="0" name="ImageComments"></element>
 <element tag="0028,0002" vr="US" vm="1" len="2" name="SamplesPerPixel">1</element>
