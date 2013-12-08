@@ -10,7 +10,7 @@ exports.viewer = function(req, res){
     var fs = require("fs");//pour lire un fichier
 
 
-    var xml = fs.readFileSync("public/temp/test.xml", "utf-8");
+    var xml = fs.readFileSync("public/temp/tempxml/0.xml", "utf-8");
 
     var xmlDoc = libxmljs.parseXmlString(xml);
 
@@ -85,6 +85,7 @@ exports.upload = function(req, res){
                 exec("dcm2xml public/temp/CT/"+ files[i] +" public/temp/tempxml/"+(i-2)+".xml",puts);
                 exec("dcmdump public/temp/CT/"+ files[i] +" +W public/temp/tempraw",puts);
             }
+
 
             res.redirect('viewer');
         });
