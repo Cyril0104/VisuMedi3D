@@ -74,20 +74,44 @@ exports.upload = function(req, res){
 
 
     else if (str[(str.length)-1]=='zip'){
-        exec("unzip " +file.path+ " -d public/temp", function (error, stdout, stderr) {
+
+        // For no collision erasing previous contents 
+        exec("rm -rf public/temp/CT/* ");
+        exec("rm -rf public/temp/tempxml/* ");
+        exec("rm -rf public/temp/tempraw/* ", function (error, stdout, stderr) {
+            
+            // Unzip it
+            exec("unzip " +file.path+ " -d public/temp", function (error, stdout, stderr) {
             
             files = fs.readdirSync("public/temp/CT");
             //console.log(files);
 
             function puts(error, stdout, stderr) { sys.puts(stdout)}
-
-            for (var i=2; i<files.length; ++i) {
+            
+            
+            // Collect of XML & RAW data from DCM files
+            for (var i=2; i<files.length; ++i){
                 exec("dcm2xml public/temp/CT/"+ files[i] +" public/temp/tempxml/"+(i-2)+".xml",puts);
-                exec("dcmdump public/temp/CT/"+ files[i] +" +W public/temp/tempraw",puts);
+
+                exec("dcmdump public/temp/CT/"+ files[i] +" +W public/temp/tempraw",puts); 
             }
 
+            // Creating NRRD file without using Buffer 
+            // !!! NOT WORKING !!! //
 
+            
+            Rawfiles = fs.readdirSync("public/temp/tempraw");
+
+            for (var i=0; i<Rawfiles.length; ++i){
+                var tmp= fs.readFileSync('public/temp/tempraw/'+Rawfiles[i]+'');
+
+                fs.appendFileSync('public/temp/test.nrrd',tmp);
+            }
+
+            //var NRRDbuffer = new Buffer(8);
+            exec('rm public/temp/' + file.path +'');
             res.redirect('viewer');
+            });
         });
     }
 
