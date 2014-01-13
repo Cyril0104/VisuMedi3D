@@ -108,7 +108,7 @@ exports.upload = function(req, res){
                     
                     Rawfiles = fs.readdirSync("public/temp/tempraw");
                     Rawfiles.sort();
-                    fs.appendFileSync('public/temp/test.nrrd','NRRD0001\n# my first nrrd\ntype: uchar\ndimension: 3\nsizes: 3 640 480\nencoding: raw\n');
+                    fs.appendFileSync('public/temp/test.nrrd','NRRD0001\n# my first nrrd\ntype: uchar\ndimension: 3\nsizes: 111 512 512\nencoding: raw\n');
                     
                     for (var i=0; i<Rawfiles.length; ++i){
                         var tmp= fs.readFileSync('public/temp/tempraw/'+Rawfiles[i]+'');

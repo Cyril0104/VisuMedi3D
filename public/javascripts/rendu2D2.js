@@ -17,19 +17,19 @@ window.onload = function() {
   r3.orientation = 'Z';
   r3.init();
 
-  var r4 = new X.renderer3D();
+/*  var r4 = new X.renderer3D();
 
   r4.container = 'r4';
   //r4.orientation = 'X';
   r4.init();
   r4.camera.position = [0,100,0];
 
-
+*/
 
   volume = new X.volume();
 
-  //volume.file = '../temp/test.nrrd';
-  volume.file = 'http://x.babymri.org/?vol.nrrd'; //test avec fichier nrrd de XTK
+  volume.file = '../temp/test.nrrd';
+  //volume.file = 'http://x.babymri.org/?vol.nrrd'; //test avec fichier nrrd de XTK
   //volume.file = 'test.dcm';
 
 
@@ -44,9 +44,9 @@ window.onload = function() {
     r3.add(volume);
     r3.render();
 
-    //rendu 3D
+   /* //rendu 3D
     r4.add(volume);
-    r4.render();
+    r4.render();*/
 
 /* les lignes si dessous font en sorte que le rendu soit volumique */
     volume.volumeRendering = true; //activation de la 3D
