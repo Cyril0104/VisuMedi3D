@@ -17,24 +17,16 @@ $(document).ready(function($) {
     	effect: 'flip'
     });
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 });
+
+  $(function() {
+    $( "#sliderR1" ).slider();
+  });
+
+    $(function() {
+    $( "#sliderR2" ).slider();
+  });
+
+      $(function() {
+    $( "#sliderR3" ).slider();
+  });
