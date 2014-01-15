@@ -2,7 +2,6 @@
 /*
 window.onload = function() {
 
-  
 
   r1 = new X.renderer2D();
   r1.container = 'r1';
@@ -19,12 +18,14 @@ window.onload = function() {
   r3.orientation = 'Z';
   r3.init();
 
+
   var r4 = new X.renderer3D();
 
   r4.container = 'r4';
   //r4.orientation = 'X';
   r4.init();
   r4.camera.position = [0,100,0];
+
 
 
 
@@ -46,6 +47,7 @@ window.onload = function() {
     r3.add(volume);
     r3.render();
 
+
     //rendu 3D
     r4.add(volume);
     r4.render();
@@ -62,6 +64,7 @@ window.onload = function() {
 
     //opacité
     volume.opacity = 0.2;
+
 
   };
   
