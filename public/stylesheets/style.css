@@ -1,3 +1,8 @@
+/* /////////////////////////////////////////////////////// */
+/*														   */
+/*					 		FONT	    				   */
+/*														   */
+/* /////////////////////////////////////////////////////// */
 @font-face {
     font-family: 'railwayregular';
     src: url('railway.eot');
@@ -23,13 +28,23 @@ p {
 	color: #D9CB9E;
 }
 
+/* /////////////////////////////////////////////////////// */
+/*														   */
+/*					 		HEADER						   */
+/*														   */
+/* /////////////////////////////////////////////////////// */
 header{
 	width: 100%;
-	height:70px;
+	height:10%;
 	background: #1E1E20;
 	text-align: center;
 }
 
+/* /////////////////////////////////////////////////////// */
+/*														   */
+/*					 	MENU/INFOS						   */
+/*														   */
+/* /////////////////////////////////////////////////////// */
 #wrapper {
 	width: 100%;
 }
@@ -262,34 +277,40 @@ canvas {
 	clear: both;
 }
 
-#r1 {
-	background-color: #000000;
+/* /////////////////////////////////////////////////////// */
+/*														   */
+/*					 RENDER CONTENER					   */
+/*														   */
+/* /////////////////////////////////////////////////////// */
+
+#renderContainer1, #renderContainer2, #renderContainer3, #renderContainer4 {
 	float: left;
-	width: 40%;
-	height: 40%;
+	width: 45%;
+	height: 45%;
 	margin: 10px;
 }
 
-#r2 {
+/* /////////////////////////////////////////////////////// */
+/*														   */
+/*					 CONTEXTE DE RENDU					   */
+/*														   */
+/* /////////////////////////////////////////////////////// */
+
+#r1, #r2, #r3, #r4 {
 	background-color: #000000;
 	float: left;
-	width: 40%;
-	height: 40%;
-	margin: 10px;
+	width: 100%;
+	height: 95%;
 }
 
-#r3 {
-	background-color: #000000;
-	float: left;
-	width: 40%;
-	height: 40%;
-	margin: 10px;
-}
+/* /////////////////////////////////////////////////////// */
+/*														   */
+/*					 SLIDERS POUR RENDU					   */
+/*														   */
+/* /////////////////////////////////////////////////////// */
 
-#r4 {
-	background-color: #000000;
-	float: left;
-	width: 40%;
-	height: 40%;
-	margin: 10px;
+#sliderR1, #sliderR2, #sliderR3, #sliderR4{
+	float: right;
+	width: 100%;
+	height: 5%;
 }
