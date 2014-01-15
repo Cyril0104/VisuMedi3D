@@ -77,47 +77,50 @@ exports.upload = function(req, res){
     else if (str[(str.length)-1]=='zip'){
 
         // For no collision erasing previous contents 
-        exec("rm -rf public/temp/CT/* ", function (error, stdout, stderr) {
-            exec("rm -rf public/temp/tempxml/* ", function (error, stdout, stderr) {
-                exec("rm -rf public/temp/tempraw/* ", function (error, stdout, stderr) {
-                    
-                    // Unzip it
-                    exec("unzip " +file.path+ " -d public/temp", function (error, stdout, stderr) {
-                    
-                    files = fs.readdirSync("public/temp/CT");
-                    //console.log(files);
+        exec("rm public/temp/test.nrrd ", function (error, stdout, stderr) {
+            exec("rm -rf public/temp/CT/* ", function (error, stdout, stderr) {
+                exec("rm -rf public/temp/tempxml/* ", function (error, stdout, stderr) {
+                    exec("rm -rf public/temp/tempraw/* ", function (error, stdout, stderr) {
+                        
+                        // Unzip it
+                        exec("unzip " +file.path+ " -d public/temp", function (error, stdout, stderr) {
+                        
+                        files = fs.readdirSync("public/temp/CT");
+                        //console.log(files);
 
-                    function puts(error, stdout, stderr) { sys.puts(stdout)}
-                    
-                    
-                    // Collect of XML & RAW data from DCM files
-                    for (var i=2; i<files.length; ++i){
-                        exec("dcm2xml public/temp/CT/"+ files[i] +" public/temp/tempxml/"+(i-2)+".xml",puts);
+                        function puts(error, stdout, stderr) { sys.puts(stdout)}
+                        
+                        
+                        // Collect of XML & RAW data from DCM files
+                        for (var i=2; i<files.length; ++i){
+                            exec("dcm2xml public/temp/CT/"+ files[i] +" public/temp/tempxml/"+(i-2)+".xml",puts);
+                            
+                            exec("dcmdump public/temp/CT/"+ files[i] +" +W public/temp/tempraw",puts); 
+                        }
 
-                        exec("dcmdump public/temp/CT/"+ files[i] +" +W public/temp/tempraw",puts); 
-                    }
+                        // Creating XML with RS //
 
-                    // Creating XML with RS //
+                        exec("dcm2xml public/temp/test.RS public/temp/RS.xml", puts);
+                        
 
-                    exec("dcm2xml public/temp/test.RS public/temp/RS.xml", puts);
-                    
+                        // Creating NRRD file without using Buffer 
+                        // Bug with NRRD //
 
-                    // Creating NRRD file without using Buffer 
-                    // Bug with NRRD //
+                        
+                        Rawfiles = fs.readdirSync("public/temp/tempraw");
+                        Rawfiles.sort();
+                        fs.appendFileSync('public/temp/test.nrrd','NRRD0004\n# my first nrrd\ntype: short\ndimension: 3\nspace: left-posterior-superior\nsizes: 512 512 111\nencoding: raw\nspace directions: (-1,0,0) (0,-1,0) (0,0,1)\nkinds: domain domain domain\nendian: little\nspace origin: (0,0,0)\n\n');
+                        
+                        for (var i=0; i<Rawfiles.length; ++i){
+                            var tmp= fs.readFileSync('public/temp/tempraw/'+Rawfiles[i]+'');
+                            fs.appendFileSync('public/temp/test.nrrd',tmp);
+                        }
+                        
 
-                    
-                    Rawfiles = fs.readdirSync("public/temp/tempraw");
-                    Rawfiles.sort();
-                    fs.appendFileSync('public/temp/test.nrrd','NRRD0001\n# my first nrrd\ntype: uchar\ndimension: 3\nsizes: 111 512 512\nencoding: raw\n');
-                    
-                    for (var i=0; i<Rawfiles.length; ++i){
-                        var tmp= fs.readFileSync('public/temp/tempraw/'+Rawfiles[i]+'');
-                        fs.appendFileSync('public/temp/test.nrrd',tmp);
-                    }
-
-                    //var NRRDbuffer = new Buffer(8);
-                    exec('rm public/temp/' + file.path +'');
-                    res.redirect('viewer');
+                        //var NRRDbuffer = new Buffer(8);
+                        exec('rm public/temp/' + file.path +'');
+                        res.redirect('viewer');
+                        });
                     });
                 });
             });
