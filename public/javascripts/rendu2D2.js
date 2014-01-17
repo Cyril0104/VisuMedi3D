@@ -105,8 +105,8 @@ window.onload = function() {
 
 
 
-  //volume.file = '../temp/test.nrrd';
-  volume.file = 'http://x.babymri.org/?vol.nrrd'; //test avec fichier nrrd de XTK
+  volume.file = '../temp/out.nrrd';
+  //volume.file = 'http://x.babymri.org/?vol.nrrd'; //test avec fichier nrrd de XTK
 
   //volume.file = 'test.dcm';
 

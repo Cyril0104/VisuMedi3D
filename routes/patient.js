@@ -53,7 +53,7 @@ exports.viewer = function(req, res){
 
 
 exports.upload = function(req, res){
-    //console.log(req.files);
+
     var file = req.files.file;
     var sys = require('sys')
     var exec = require('child_process').exec;
@@ -75,7 +75,6 @@ exports.upload = function(req, res){
 
 
     else if (str[(str.length)-1]=='zip'){
-
         // For no collision erasing previous contents 
         exec("rm public/temp/test.nrrd ", function (error, stdout, stderr) {
             exec("rm -rf public/temp/CT/* ", function (error, stdout, stderr) {
@@ -85,41 +84,25 @@ exports.upload = function(req, res){
                         // Unzip it
                         exec("unzip " +file.path+ " -d public/temp", function (error, stdout, stderr) {
                         
-                        files = fs.readdirSync("public/temp/CT");
-                        //console.log(files);
+                            files = fs.readdirSync("public/temp/CT");
+                            //console.log(files);
 
-                        function puts(error, stdout, stderr) { sys.puts(stdout)}
-                        
-                        
-                        // Collect of XML & RAW data from DCM files
-                        for (var i=2; i<files.length; ++i){
-                            exec("dcm2xml public/temp/CT/"+ files[i] +" public/temp/tempxml/"+(i-2)+".xml",puts);
+                            function puts(error, stdout, stderr) { sys.puts(stdout)}
                             
-                            exec("dcmdump public/temp/CT/"+ files[i] +" +W public/temp/tempraw",puts); 
-                        }
+                            // Collect of XML & RAW data from DCM files
+                            for (var i=2; i<files.length; ++i){
+                                exec("dcm2xml public/temp/CT/"+ files[i] +" public/temp/tempxml/"+(i-2)+".xml",puts); 
+                            }
 
-                        // Creating XML with RS //
 
-                        exec("dcm2xml public/temp/test.RS public/temp/RS.xml", puts);
-                        
+                            // Creating XML with RS //
 
-                        // Creating NRRD file without using Buffer 
-                        // Bug with NRRD //
-
-                        
-                        Rawfiles = fs.readdirSync("public/temp/tempraw");
-                        Rawfiles.sort();
-                        fs.appendFileSync('public/temp/test.nrrd','NRRD0004\n# my first nrrd\ntype: short\ndimension: 3\nspace: left-posterior-superior\nsizes: 512 512 111\nencoding: raw\nspace directions: (-1,0,0) (0,-1,0) (0,0,1)\nkinds: domain domain domain\nendian: little\nspace origin: (0,0,0)\n\n');
-                        
-                        for (var i=0; i<Rawfiles.length; ++i){
-                            var tmp= fs.readFileSync('public/temp/tempraw/'+Rawfiles[i]+'');
-                            fs.appendFileSync('public/temp/test.nrrd',tmp);
-                        }
-                        
-
-                        //var NRRDbuffer = new Buffer(8);
-                        exec('rm public/temp/' + file.path +'');
-                        res.redirect('viewer');
+                            exec("dcm2xml public/temp/test.RS public/temp/RS.xml", function (error, stdout, stderr) {
+                                exec("bash public/scripts/dcm2nrrd.sh", function (error, stdout, stderr) {
+                                    exec('rm public/temp/' +file.path+'.zip');
+                                    res.redirect('viewer');   
+                                });
+                            });
                         });
                     });
                 });
