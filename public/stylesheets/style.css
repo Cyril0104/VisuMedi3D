@@ -25,9 +25,13 @@ a:active,a:focus {
 
 p {
 	margin: 0 auto;
-	color: #D9CB9E;
+	color: #000;
 }
 
+h1, h2, h3 {
+	margin: 0 auto;
+	color: #D9CB9E;
+}
 /* /////////////////////////////////////////////////////// */
 /*														   */
 /*					 		HEADER						   */
@@ -285,9 +289,9 @@ canvas {
 
 #renderContainer1, #renderContainer2, #renderContainer3, #renderContainer4 {
 	float: left;
-	width: 45%;
-	height: 45%;
-	margin: 10px;
+	width: 50%;
+	height: 50%;
+	/*margin: 10px;*/
 }
 
 /* /////////////////////////////////////////////////////// */
