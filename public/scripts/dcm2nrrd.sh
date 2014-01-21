@@ -21,7 +21,7 @@ NRRD0004
 type: short
 dimension: 3
 space: left-posterior-superior
-sizes: 512 512 111
+sizes: 512 512 $1
 space directions: (1,0,0) (0,1,0) (0,0,1)
 endian: little
 encoding: gzip

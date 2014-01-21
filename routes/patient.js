@@ -103,7 +103,7 @@ exports.upload = function(req, res){
     var sys = require('sys')
     var exec = require('child_process').exec;
     var fs = require("fs");
- 
+    var cptfiles=0;
     //console.log('Temp file path: ' +  file.path);
     //console.log('Original file name: ' + file.name);
     
@@ -121,31 +121,31 @@ exports.upload = function(req, res){
 
     else if (str[(str.length)-1]=='zip'){
         // For no collision erasing previous contents 
-        exec("rm public/temp/test.nrrd ", function (error, stdout, stderr) {
-            exec("rm -rf public/temp/CT/* ", function (error, stdout, stderr) {
-                exec("rm -rf public/temp/tempxml/* ", function (error, stdout, stderr) {
-                    exec("rm -rf public/temp/tempraw/* ", function (error, stdout, stderr) {
-                        
-                        // Unzip it
-                        exec("unzip " +file.path+ " -d public/temp", function (error, stdout, stderr) {
-                        
-                            files = fs.readdirSync("public/temp/CT");
-                            //console.log(files);
-
-                            function puts(error, stdout, stderr) { sys.puts(stdout)}
+        exec("rm public/temp/RS.xml ", function (error, stdout, stderr) {
+            exec("rm public/temp/out.nrrd ", function (error, stdout, stderr) {
+                exec("rm -rf public/temp/CT/* ", function (error, stdout, stderr) {
+                    exec("rm -rf public/temp/tempxml/* ", function (error, stdout, stderr) {
+                        exec("rm -rf public/temp/tempraw/* ", function (error, stdout, stderr) {
                             
-                            // Collect of XML & RAW data from DCM files
-                            for (var i=2; i<files.length; ++i){
-                                exec("dcm2xml public/temp/CT/"+ files[i] +" public/temp/tempxml/"+(i-2)+".xml",puts); 
-                            }
+                            // Unzip it
+                            exec("unzip " +file.path+ " -d public/temp", function (error, stdout, stderr) {
+                            
+                                files = fs.readdirSync("public/temp/CT");
 
+                                function puts(error, stdout, stderr) { sys.puts(stdout)}
+                                
+                                // Collect of XML & RAW data from DCM files
+                                for (var i=2; i<files.length; ++i){
+                                    cptfiles++;
+                                    exec("dcm2xml public/temp/CT/"+ files[i] +" public/temp/tempxml/"+(i-2)+".xml",puts); 
+                                }
 
-                            // Creating XML with RS //
-
-                            exec("dcm2xml public/temp/test.RS public/temp/RS.xml", function (error, stdout, stderr) {
-                                exec("bash public/scripts/dcm2nrrd.sh", function (error, stdout, stderr) {
-                                    exec('rm public/temp/' +file.path+'.zip');
-                                    res.redirect('viewer');   
+                                // Creating XML with RS //
+                                exec("dcm2xml dataforproject/test.RS public/temp/RS.xml", function (error, stdout, stderr) {
+                                    exec("bash public/scripts/dcm2nrrd.sh "+cptfiles+"", function (error, stdout, stderr) {
+                                        exec('rm '+file.path+'');
+                                        res.redirect('viewer');
+                                    });
                                 });
                             });
                         });
