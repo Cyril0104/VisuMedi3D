@@ -75,6 +75,7 @@ window.onload = function() {
     gui_r1.domElement.style.position = 'absolute';
     gui_r1.domElement.style.top = '0px';
     //gui_r1.domElement.style.left = '20px';
+    gui_r1.domElement.style.height = '450px';
     document.getElementById('r1').appendChild( gui_r1.domElement );
 
 
@@ -91,8 +92,9 @@ window.onload = function() {
     var sliceYController = volumegui.add(volume, 'indexY', 0, volume.range[1] - 1);
         // Do some custom styles ...
     gui_r2.domElement.style.position = 'absolute';
-    gui_r2.domElement.style.top = '5%';
-   // gui_r2.domElement.style.left = '0px';
+    gui_r2.domElement.style.top = '5.1%';
+    gui_r2.domElement.style.left = '58%';
+    gui_r2.domElement.style.height = '450px';
     document.getElementById('r2').appendChild( gui_r2.domElement );
 
     volumegui.open();
@@ -106,7 +108,8 @@ window.onload = function() {
     var sliceZController = volumegui.add(volume, 'indexZ', 0, volume.range[2] - 1);
             // Do some custom styles ...
     gui_r3.domElement.style.position = 'absolute';
-    gui_r3.domElement.style.top = '55%';
+    gui_r3.domElement.style.top = '56%';
+    gui_r1.domElement.style.height = '100%';
     //gui_r3.domElement.style.left = '20px';
     document.getElementById('r3').appendChild( gui_r3.domElement );
 
@@ -145,7 +148,7 @@ window.onload = function() {
     
     var vrController = volumegui.add(volume3D, 'volumeRendering');
 
-    var opacityController = volumegui.add(volume3D, 'opacity', 0, 1).name('Transparency');
+    var opacityController = volumegui.add(volume3D, 'opacity', 0, 1).name('Opacité');
   
     var lowerThresholdController = volumegui.add(volume3D, 'lowerThreshold', volume3D.min, volume3D.max);
     var upperThresholdController = volumegui.add(volume3D, 'upperThreshold', volume3D.min, volume3D.max);
@@ -155,6 +158,7 @@ window.onload = function() {
     // Do some custom styles ...
     gui_3D.domElement.style.position = 'absolute';
     gui_3D.domElement.style.top = '0px';
+    gui_3D.domElement.style.height = '450px';
     //gui_3D.domElement.style.left = '20px';
     document.getElementById('r4').appendChild( gui_3D.domElement );
 
