@@ -312,13 +312,12 @@ canvas {
 /*					 		GUI							   */
 /*														   */
 /* /////////////////////////////////////////////////////// */
-/*
 .dg.ac {
     height: 0;
     left: 0;
-    position: fixed;
-    margin-right: 80%;
-    margin-top: 10%;
+    /*position: fixed;*/
+    right: 0;
+    top: 0;
     z-index: 0;
 }
 .dg {
@@ -326,14 +325,7 @@ canvas {
     font: 11px 'Lucida Grande',sans-serif;
     text-shadow: 0 -1px 0 #111111;
 }
-.dg {
-    float: left;
-}
 
-element.style {
-    -moz-user-select: none;
-    width: 245px;
-}
 .dg.a {
     float: right;
     margin-right: 15px;
@@ -343,15 +335,12 @@ element.style {
     transition: opacity 0.1s linear 0s;
 }
 
-.dg.main .close-button {
-    background-color: #000000;
-    border: 0 none;
-    cursor: pointer;
-    height: 20px;
-    line-height: 19px;
-    position: absolute;
-    text-align: center;
-    transition: opacity 0.1s linear 0s;
+.dg ul {
+    clear: both;
+    list-style: none outside none;
+    margin: 0;
+    padding: 0;
+    width: 100%;
 }
 
 
@@ -365,4 +354,29 @@ element.style {
 .dg li {
     transition: height 0.1s ease-out 0s;
 }
-*/
+li {
+    list-style: none outside none;
+}
+
+
+.dg li.title {
+    background: url("data:image/gif;base64,R0lGODlhBQAFAJEAAP////Pz8////////yH5BAEAAAIALAAAAAAFAAUAAAIIlI+hKgFxoCgAOw==") no-repeat scroll 6px 10px #000000;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+    cursor: pointer;
+    padding-left: 16px;
+}
+.dg li:not(.folder) {
+    background: none repeat scroll 0 0 #1A1A1A;
+    border-bottom: 1px solid #2C2C2C;
+}
+.dg li.title {
+    cursor: pointer;
+    margin-left: -4px;
+}
+.dg li:not(.folder) {
+    cursor: auto;
+    height: 27px;
+    line-height: 27px;
+    overflow: hidden;
+    padding: 0 4px 0 5px;
+}

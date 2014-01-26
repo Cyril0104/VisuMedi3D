@@ -58,11 +58,12 @@ window.onload = function() {
     r3.render();
 
 /* ****************************** */
-/*              GUI               */
+/*              GUI r1            */
 /* ****************************** */
-    var gui = new dat.GUI();
+    var gui_r1 = new dat.GUI();
     
-    var volumegui = gui.addFolder('Volume');
+    var volumegui = gui_r1.addFolder('R1');
+
 
     var lowerThresholdController = volumegui.add(volume, 'lowerThreshold', volume.min, volume.max);
     var upperThresholdController = volumegui.add(volume, 'upperThreshold', volume.min, volume.max);
@@ -70,9 +71,47 @@ window.onload = function() {
     var upperWindowController = volumegui.add(volume, 'windowHigh', volume.min, volume.max);
 
     var sliceXController = volumegui.add(volume, 'indexX', 0, volume.range[0] - 1);
-    var sliceYController = volumegui.add(volume, 'indexY', 0, volume.range[1] - 1);
-    var sliceZController = volumegui.add(volume, 'indexZ', 0, volume.range[2] - 1);
+                // Do some custom styles ...
+    gui_r1.domElement.style.position = 'absolute';
+    gui_r1.domElement.style.top = '0px';
+    //gui_r1.domElement.style.left = '20px';
+    document.getElementById('r1').appendChild( gui_r1.domElement );
+
+
     volumegui.open();
+
+
+
+/* ****************************** */
+/*              GUI r2            */
+/* ****************************** */
+    var gui_r2 = new dat.GUI();
+    
+    var volumegui = gui_r2.addFolder('R2');
+    var sliceYController = volumegui.add(volume, 'indexY', 0, volume.range[1] - 1);
+        // Do some custom styles ...
+    gui_r2.domElement.style.position = 'absolute';
+    gui_r2.domElement.style.top = '5%';
+   // gui_r2.domElement.style.left = '0px';
+    document.getElementById('r2').appendChild( gui_r2.domElement );
+
+    volumegui.open();
+
+/* ****************************** */
+/*              GUI r3            */
+/* ****************************** */
+    var gui_r3 = new dat.GUI();
+    
+    var volumegui = gui_r3.addFolder('R3');
+    var sliceZController = volumegui.add(volume, 'indexZ', 0, volume.range[2] - 1);
+            // Do some custom styles ...
+    gui_r3.domElement.style.position = 'absolute';
+    gui_r3.domElement.style.top = '55%';
+    //gui_r3.domElement.style.left = '20px';
+    document.getElementById('r3').appendChild( gui_r3.domElement );
+
+    volumegui.open();
+
 
 
   };
@@ -106,12 +145,20 @@ window.onload = function() {
     
     var vrController = volumegui.add(volume3D, 'volumeRendering');
 
-    var opacityController = volumegui.add(volume3D, 'opacity', 0, 1);
+    var opacityController = volumegui.add(volume3D, 'opacity', 0, 1).name('Transparency');
   
     var lowerThresholdController = volumegui.add(volume3D, 'lowerThreshold', volume3D.min, volume3D.max);
     var upperThresholdController = volumegui.add(volume3D, 'upperThreshold', volume3D.min, volume3D.max);
     var lowerWindowController = volumegui.add(volume3D, 'windowLow', volume3D.min,  volume3D.max);
     var upperWindowController = volumegui.add(volume3D, 'windowHigh', volume3D.min, volume3D.max);
+    
+    // Do some custom styles ...
+    gui_3D.domElement.style.position = 'absolute';
+    gui_3D.domElement.style.top = '0px';
+    //gui_3D.domElement.style.left = '20px';
+    document.getElementById('r4').appendChild( gui_3D.domElement );
+
+
     volumegui.open();
 
 
