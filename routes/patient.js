@@ -98,11 +98,13 @@ exports.viewer = function(req, res){
 
 
 exports.upload = function(req, res){
+    var libxmljs = require("libxmljs");
 
     var file = req.files.file;
     var sys = require('sys')
     var exec = require('child_process').exec;
     var fs = require("fs");
+      
     var cptfiles=0;
     //console.log('Temp file path: ' +  file.path);
     //console.log('Original file name: ' + file.name);
@@ -117,6 +119,8 @@ exports.upload = function(req, res){
         exec("dcmdump "+ file.path +" +W public/temp",puts);
         res.redirect('viewer');
         }
+
+ 
 
 
     else if (str[(str.length)-1]=='zip'){
@@ -140,11 +144,23 @@ exports.upload = function(req, res){
                                     exec("dcm2xml public/temp/CT/"+ files[i] +" public/temp/tempxml/"+(i-2)+".xml",puts); 
                                 }
 
+                                // We use this to take information about dcm
+                                var xml = fs.readFileSync("public/temp/tempxml/0.xml", "utf-8");
+                                var xmlDoc = libxmljs.parseXmlString(xml);
+                                var p_pixelspacing=xmlDoc.get("//element[@name='PixelSpacing']").text();
+                                var p_pixelspacing_split=p_pixelspacing.split('\\');
+                                var p_positionpatient=xmlDoc.get("//element[@name='ImagePositionPatient']").text();
+                                var p_positionpatient_split=p_positionpatient.split('\\');
+                                var pos_x=p_positionpatient_split[0]*p_pixelspacing_split[0];
+                                var pos_y=p_positionpatient_split[1]*p_pixelspacing_split[0];
+                                var pos_z=p_positionpatient_split[2]*p_pixelspacing_split[0];
+                                
                                 // Creating XML with RS //
                                 exec("dcm2xml dataforproject/test.RS public/temp/RS.xml", function (error, stdout, stderr) {
-                                    exec("bash public/scripts/dcm2nrrd.sh "+cptfiles+"", function (error, stdout, stderr) {
+                                    exec("bash public/scripts/dcm2nrrd.sh "+cptfiles+" "+pos_x+" "+pos_y+" "+pos_z+"", function (error, stdout, stderr) {
                                         exec('rm '+file.path+'');
                                         res.redirect('viewer');
+                                        console.log(p_pixelspacing_split);
                                     });
                                 });
                             });

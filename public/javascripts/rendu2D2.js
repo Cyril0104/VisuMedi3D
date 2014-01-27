@@ -42,9 +42,10 @@ window.onload = function() {
   surface.color = [1,0,0];
 ----------------------------------- */
 
-  //volume.file = '../temp/test.nrrd';
-  volume.file = 'http://x.babymri.org/?vol.nrrd'; //test avec fichier nrrd de XTK
-  volume3D.file = 'http://x.babymri.org/?vol.nrrd'; //test avec fichier nrrd de XTK
+  volume.file = '../temp/out.nrrd';
+  volume3D.file ='../temp/out.nrrd';
+  //volume.file = 'http://x.babymri.org/?vol.nrrd'; //test avec fichier nrrd de XTK
+  //volume3D.file = 'http://x.babymri.org/?vol.nrrd'; //test avec fichier nrrd de XTK
 
 
   r1.add(volume);
