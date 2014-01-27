@@ -60,23 +60,22 @@ window.onload = function() {
 /* ****************************** */
 /*              GUI r1            */
 /* ****************************** */
-    var gui_r1 = new dat.GUI();
+    var gui_r1 = new dat.GUI({ autoPlace: false });
+
     
     var volumegui = gui_r1.addFolder('R1');
 
-/*
-    var lowerThresholdController = volumegui.add(volume, 'lowerThreshold', volume.min, volume.max);
-    var upperThresholdController = volumegui.add(volume, 'upperThreshold', volume.min, volume.max);
-    var lowerWindowController = volumegui.add(volume, 'windowLow', volume.min, volume.max);
-    var upperWindowController = volumegui.add(volume, 'windowHigh', volume.min, volume.max);
-*/
     var sliceXController = volumegui.add(volume, 'indexX', 0, volume.range[0] - 1).name('Slice X');
-                // Do some custom styles ...
+    var lowerThresholdController = volumegui.add(volume, 'lowerThreshold', volume.min, volume.max);
+   // var upperThresholdController = volumegui.add(volume, 'upperThreshold', volume.min, volume.max);
+  //  var lowerWindowController = volumegui.add(volume, 'windowLow', volume.min, volume.max);
+    var upperWindowController = volumegui.add(volume, 'windowHigh', volume.min, volume.max);
+
     gui_r1.domElement.style.position = 'absolute';
-    gui_r1.domElement.style.top = '0px';
+    //gui_r1.domElement.style.top = '0px';
     //gui_r1.domElement.style.left = '20px';
-    gui_r1.domElement.style.height = '450px';
-    document.getElementById('r1').appendChild( gui_r1.domElement );
+    //gui_r1.domElement.style.height = '450px';
+    document.getElementById('GUI_R1').appendChild( gui_r1.domElement );
 
 
     volumegui.open();
@@ -86,32 +85,39 @@ window.onload = function() {
 /* ****************************** */
 /*              GUI r2            */
 /* ****************************** */
-    var gui_r2 = new dat.GUI();
+    var gui_r2 = new dat.GUI({ autoPlace: false });
+
     
     var volumegui = gui_r2.addFolder('R2');
-    var sliceYController = volumegui.add(volume, 'indexY', 0, volume.range[1] - 1);
-        // Do some custom styles ...
+    var sliceYController = volumegui.add(volume, 'indexY', 0, volume.range[1] - 1).name('Slice Y');
+    var lowerThresholdController = volumegui.add(volume, 'lowerThreshold', volume.min, volume.max);
+   // var upperThresholdController = volumegui.add(volume, 'upperThreshold', volume.min, volume.max);
+  //  var lowerWindowController = volumegui.add(volume, 'windowLow', volume.min, volume.max);
+    var upperWindowController = volumegui.add(volume, 'windowHigh', volume.min, volume.max);
     gui_r2.domElement.style.position = 'absolute';
-    gui_r2.domElement.style.top = '5.1%';
-    gui_r2.domElement.style.left = '58%';
-    gui_r2.domElement.style.height = '450px';
-    document.getElementById('r2').appendChild( gui_r2.domElement );
+    //gui_r2.domElement.style.top = '5.1%';
+    //gui_r2.domElement.style.left = '58%';
+    //gui_r2.domElement.style.height = '450px';
+    document.getElementById('GUI_R2').appendChild( gui_r2.domElement );
 
     volumegui.open();
 
 /* ****************************** */
 /*              GUI r3            */
 /* ****************************** */
-    var gui_r3 = new dat.GUI();
+    var gui_r3 = new dat.GUI({ autoPlace: false });
     
     var volumegui = gui_r3.addFolder('R3');
-    var sliceZController = volumegui.add(volume, 'indexZ', 0, volume.range[2] - 1);
-            // Do some custom styles ...
+    var sliceZController = volumegui.add(volume, 'indexZ', 0, volume.range[2] - 1).name('Slice Z');
+         var lowerThresholdController = volumegui.add(volume, 'lowerThreshold', volume.min, volume.max);
+   // var upperThresholdController = volumegui.add(volume, 'upperThreshold', volume.min, volume.max);
+  //  var lowerWindowController = volumegui.add(volume, 'windowLow', volume.min, volume.max);
+    var upperWindowController = volumegui.add(volume, 'windowHigh', volume.min, volume.max);
     gui_r3.domElement.style.position = 'absolute';
-    gui_r3.domElement.style.top = '56%';
-    gui_r1.domElement.style.height = '100%';
+    //gui_r3.domElement.style.top = '56%';
+    //gui_r1.domElement.style.height = '100%';
     //gui_r3.domElement.style.left = '20px';
-    document.getElementById('r3').appendChild( gui_r3.domElement );
+    document.getElementById('GUI_R3').appendChild( gui_r3.domElement );
 
     volumegui.open();
 
