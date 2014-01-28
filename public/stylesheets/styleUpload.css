@@ -67,8 +67,8 @@ header {
 
 #titre h2 {
     color: white;
-    top: 0px;
     padding: 0;
+    padding-top: 15px;
     margin: 0;
 }
 
@@ -79,11 +79,16 @@ header {
 
 }
 
-
+.upload-button {
+    left: 300px;
+    padding-left: 35px;
+}
 
 .send-button {
 
-    /*margin-top: 60px;*/
+    margin-top: 60px;
+    left: 30px;
+
     -moz-border-bottom-colors: none;
     -moz-border-left-colors: none;
     -moz-border-right-colors: none;
