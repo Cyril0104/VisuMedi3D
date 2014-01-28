@@ -67,12 +67,12 @@ window.onload = function() {
     var volumegui = gui_r1.addFolder('R1');
 
     var sliceXController = volumegui.add(volume, 'indexX', 0, volume.range[0] - 1).name('Slice X');
-    var lowerThresholdController = volumegui.add(volume, 'lowerThreshold', volume.min, volume.max);
-   // var upperThresholdController = volumegui.add(volume, 'upperThreshold', volume.min, volume.max);
-  //  var lowerWindowController = volumegui.add(volume, 'windowLow', volume.min, volume.max);
-    var upperWindowController = volumegui.add(volume, 'windowHigh', volume.min, volume.max);
+    // var lowerThresholdController = volumegui.add(volume, 'lowerThreshold', volume.min, volume.max);
+    // var upperThresholdController = volumegui.add(volume, 'upperThreshold', volume.min, volume.max);
+    // var lowerWindowController = volumegui.add(volume, 'windowLow', volume.min, volume.max);
+    // var upperWindowController = volumegui.add(volume, 'windowHigh', volume.min, volume.max);
 
-    gui_r1.domElement.style.position = 'absolute';
+    //gui_r1.domElement.style.position = 'absolute';
     //gui_r1.domElement.style.top = '0px';
     //gui_r1.domElement.style.left = '20px';
     //gui_r1.domElement.style.height = '450px';
@@ -91,11 +91,12 @@ window.onload = function() {
     
     var volumegui = gui_r2.addFolder('R2');
     var sliceYController = volumegui.add(volume, 'indexY', 0, volume.range[1] - 1).name('Slice Y');
-    var lowerThresholdController = volumegui.add(volume, 'lowerThreshold', volume.min, volume.max);
-   // var upperThresholdController = volumegui.add(volume, 'upperThreshold', volume.min, volume.max);
-  //  var lowerWindowController = volumegui.add(volume, 'windowLow', volume.min, volume.max);
-    var upperWindowController = volumegui.add(volume, 'windowHigh', volume.min, volume.max);
-    gui_r2.domElement.style.position = 'absolute';
+    // var lowerThresholdController = volumegui.add(volume, 'lowerThreshold', volume.min, volume.max);
+    // var upperThresholdController = volumegui.add(volume, 'upperThreshold', volume.min, volume.max);
+    // var lowerWindowController = volumegui.add(volume, 'windowLow', volume.min, volume.max);
+    // var upperWindowController = volumegui.add(volume, 'windowHigh', volume.min, volume.max);
+    
+    //gui_r2.domElement.style.position = 'absolute';
     //gui_r2.domElement.style.top = '5.1%';
     //gui_r2.domElement.style.left = '58%';
     //gui_r2.domElement.style.height = '450px';
