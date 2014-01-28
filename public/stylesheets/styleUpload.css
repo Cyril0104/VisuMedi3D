@@ -1,0 +1,119 @@
+/* /////////////////////////////////////////////////////// */
+/*														   */
+/*					 		FONT	    				   */
+/*														   */
+/* /////////////////////////////////////////////////////// */
+@font-face {
+    font-family: 'railwayregular';
+    src: url('railway.eot');
+    src: url('railway.eot?#iefix') format('embedded-opentype'),
+         url('railway.woff') format('woff'),
+         url('railway.ttf') format('truetype'),
+         url('railway.svg#railwayregular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+html{
+	background-color : #E9E9E9;
+	font-family:railwayregular, sans-serif;
+	width: 100%;
+	height: 100%;
+}
+/*
+header {
+    background-color: #E9E9E9;
+    width: 100%;
+    text-align: center;
+    margin-top: 100px;
+    font-size: 2em;
+    color: #3498DB;
+}
+*/
+
+#upload {
+    position:absolute;
+    
+    left: 50%;
+    top: 40%;
+    width: 400px;
+    height: 400px;
+    margin-left: -220px; 
+    margin-top: -200px; 
+    
+   /* padding: 35px 20px;*/
+    
+    color: #444444;
+    background-color: #ddd;
+    background-image: linear-gradient(#E5E5E5, #CFCFCF);
+    
+    box-shadow: -1px 2px 4px 1px rgba(0, 0, 0, 0.7); 
+}
+
+#titre {
+    width: 100%;
+    height: 15%;
+    top: 0px;
+    text-align: center;
+    background: none repeat scroll 0 0 #3498DB;
+    border-color: -moz-use-text-color -moz-use-text-color #2980B9;
+    border-image: none;
+    /*border-radius: 5px;*/
+    border-style: none none solid;
+    border-width: 0 0 2px;
+    box-shadow: 0 -2px #20638F inset;
+}
+
+#titre h2 {
+    color: white;
+    top: 0px;
+    padding: 0;
+    margin: 0;
+}
+
+#form {
+    width: 100%;
+    height: 85%;    
+    padding: 35px 20px;
+
+}
+
+
+
+.send-button {
+
+    /*margin-top: 60px;*/
+    -moz-border-bottom-colors: none;
+    -moz-border-left-colors: none;
+    -moz-border-right-colors: none;
+    -moz-border-top-colors: none;
+    background: none repeat scroll 0 0 #3498DB;
+    border-color: -moz-use-text-color -moz-use-text-color #2980B9;
+    border-image: none;
+    border-radius: 5px;
+    border-style: none none solid;
+    border-width: 0 0 2px;
+    box-shadow: 0 -2px #20638F inset;
+    color: #FFFFFF;
+    cursor: pointer;
+    font-size: 22px;
+    height: 54px;
+    padding: 0;
+    position: relative;
+    text-align: center;
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.25);
+    vertical-align: top;
+    width: 75%;
+}
+
+.send-button:active {
+    box-shadow: none;
+    outline: medium none;
+    top: 1px;
+}
+input {
+    -moz-box-sizing: border-box;
+    color: inherit;
+    font-family: inherit;
+}
