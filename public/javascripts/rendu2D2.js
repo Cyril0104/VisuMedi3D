@@ -111,10 +111,10 @@ window.onload = function() {
     
     var volumegui = gui_r3.addFolder('R3');
     var sliceZController = volumegui.add(volume, 'indexZ', 0, volume.range[2] - 1).name('Slice Z');
-         var lowerThresholdController = volumegui.add(volume, 'lowerThreshold', volume.min, volume.max);
-   // var upperThresholdController = volumegui.add(volume, 'upperThreshold', volume.min, volume.max);
-  //  var lowerWindowController = volumegui.add(volume, 'windowLow', volume.min, volume.max);
-    var upperWindowController = volumegui.add(volume, 'windowHigh', volume.min, volume.max);
+    // var lowerThresholdController = volumegui.add(volume, 'lowerThreshold', volume.min, volume.max);
+    // var upperThresholdController = volumegui.add(volume, 'upperThreshold', volume.min, volume.max);
+    // var lowerWindowController = volumegui.add(volume, 'windowLow', volume.min, volume.max);
+    // var upperWindowController = volumegui.add(volume, 'windowHigh', volume.min, volume.max);
     gui_r3.domElement.style.position = 'absolute';
     //gui_r3.domElement.style.top = '56%';
     //gui_r1.domElement.style.height = '100%';

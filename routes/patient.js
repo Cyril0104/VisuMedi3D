@@ -24,6 +24,8 @@ exports.viewer = function(req, res){
     var p_rows = xmlDoc.get("//element[@name='Rows']").text();
     var p_pixelspacing=xmlDoc.get("//element[@name='PixelSpacing']").text();
     var p_slicelocation=xmlDoc.get("//element[@name='SliceLocation']").text();
+
+    
 	
     // Only for debugging
 
@@ -144,23 +146,23 @@ exports.upload = function(req, res){
                                     exec("dcm2xml public/temp/CT/"+ files[i] +" public/temp/tempxml/"+(i-2)+".xml",puts); 
                                 }
 
-                                // We use this to take information about dcm
-                                var xml = fs.readFileSync("public/temp/tempxml/0.xml", "utf-8");
-                                var xmlDoc = libxmljs.parseXmlString(xml);
-                                var p_pixelspacing=xmlDoc.get("//element[@name='PixelSpacing']").text();
-                                var p_pixelspacing_split=p_pixelspacing.split('\\');
-                                var p_positionpatient=xmlDoc.get("//element[@name='ImagePositionPatient']").text();
-                                var p_positionpatient_split=p_positionpatient.split('\\');
-                                var pos_x=p_positionpatient_split[0]*p_pixelspacing_split[0];
-                                var pos_y=p_positionpatient_split[1]*p_pixelspacing_split[0];
-                                var pos_z=p_positionpatient_split[2]*p_pixelspacing_split[0];
-                                
+                               
                                 // Creating XML with RS //
                                 exec("dcm2xml dataforproject/test.RS public/temp/RS.xml", function (error, stdout, stderr) {
+                                     // We use this to take information about dcm
+                                    var xml = fs.readFileSync("public/temp/tempxml/0.xml", "utf-8");
+                                    var xmlDoc = libxmljs.parseXmlString(xml);
+                                    var p_pixelspacing=xmlDoc.get("//element[@name='PixelSpacing']").text();
+                                    var p_pixelspacing_split=p_pixelspacing.split('\\');
+                                    var p_positionpatient=xmlDoc.get("//element[@name='ImagePositionPatient']").text();
+                                    var p_positionpatient_split=p_positionpatient.split('\\');
+                                    var pos_x=p_positionpatient_split[0]*p_pixelspacing_split[0];
+                                    var pos_y=p_positionpatient_split[1]*p_pixelspacing_split[0];
+                                    var pos_z=p_positionpatient_split[2]*p_pixelspacing_split[0];
+                                    
                                     exec("bash public/scripts/dcm2nrrd.sh "+cptfiles+" "+pos_x+" "+pos_y+" "+pos_z+"", function (error, stdout, stderr) {
                                         exec('rm '+file.path+'');
                                         res.redirect('viewer');
-                                        console.log(p_pixelspacing_split);
                                     });
                                 });
                             });
